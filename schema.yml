@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: CSV Reader
+  version: 1.0.0
+  description: API that reads fata from csv or xslx files with pandas
+paths:
+  /api/{s}:
+    get:
+      operationId: api_retrieve
+      parameters:
+      - in: path
+        name: s
+        schema:
+          type: string
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
