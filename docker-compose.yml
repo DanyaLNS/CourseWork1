@@ -38,5 +38,5 @@ services:
     depends_on:
       - app_server
       - nginx_server
-    volumes:
-      - static_files:${STATIC_PATH_NGINX}
+volumes:
+  static_files:
